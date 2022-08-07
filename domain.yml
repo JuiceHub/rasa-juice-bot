@@ -1,0 +1,71 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - chitchat
+  - request_memo
+  - inform
+
+responses:
+  utter_greet:
+    - text: 你好！请问我可以帮到你吗？
+    - text: 你好！很高兴为你服务。请说出你要查询的功能？
+    - text: 你好啊
+  utter_goodbye:
+    - text: 再见
+    - text: 拜拜
+    - text: 虽然我有万般舍不得，但是天下没有不散的宴席~祝你安好！
+    - text: 期待下次再见！
+    - text: 嗯嗯，下次需要时随时记得我哟~
+    - text: see you!
+  utter_affirm:
+    - text: 嗯嗯，好的！
+    - text: 嗯嗯，很开心能够帮你解决问题~
+    - text: 嗯嗯，还需要什么我能够帮助你的呢？
+  utter_deny:
+    - text: 你不开心吗？有什么来和我说说
+    - text: 请不要离开哦
+    - text: 你怎么了？
+  #memo
+  utter_ask_memo_name:
+    - text: "你想创建什么备忘录？"
+  utter_ask_event_list:
+    - text: "你想创建什么事件？"
+  utter_submit:
+    - text: "全部完成!"
+  utter_slots_values:
+    - text: "我将创建以下事件:\n
+            - memo_name: {memo_name}\n
+            - event_name: {event_name}\n"
+forms:
+  memo_form:
+    required_slots:
+      memo_name:
+        - type: from_entity
+          entity: memo_name
+      event_name:
+        - type: from_entity
+          entity: event_name
+
+entities:
+  - memo_name
+  - event_name
+slots:
+  memo_name:
+    type: text
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+
+  event_name:
+    type: text
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,116 @@
+version: "2.0"
+nlu:
+  - intent: greet
+    examples: |
+      - 你好
+      - 你好啊
+      - 早上好
+      - 晚上好
+      - hello
+      - hi
+      - 嗨
+      - 嗨喽
+      - 见到你很高兴
+      - 嘿
+      - 早
+      - 上午好
+      - hello哈喽
+      - 哈喽哈喽
+      - hello hello
+      - 喂喂
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - bye
+      - bye bye
+      - 88
+      - 886
+      - 再见
+      - 拜
+      - 拜拜
+      - 拜拜，下次再聊
+      - 下次见
+      - 回头见
+      - 下次再见
+      - 下次再聊
+      - 有空再聊
+      - 先这样吧
+      - 好了，就说这么多了
+      - 好了，先这样
+      - 没事
+  - intent: affirm
+    examples: |
+      - 知道了
+      - 是的
+      - 当然
+      - 好的
+      - ok
+      - 嗯
+      - 可以
+      - 你可以这么做
+      - 你做得可以啊
+      - 同意
+      - 听起来不错
+      - 是这样的
+      - 的确是这样子的
+      - 我同意你的观点
+      - 对的
+      - 好滴
+      - 行
+      - 还行
+      - 当然可以
+  - intent: deny
+    examples: |
+      - 不了
+      - 算了
+      - 不用了
+      - 不需要
+      - 不
+      - no
+      - 不可以
+      - 不是的
+      - 不认同
+      - 否定
+      - 不是这样子的
+      - 我不同意你的观点
+      - 不同意
+      - 不好
+      - 你长得很美，就不要想得太美。
+      - 拒绝
+      - 不行
+  #chitchat
+  - intent: chitchat/ask_name
+    examples: |
+      - 你叫什么名字？
+      - 可以告诉我你的名字吗
+      - 怎么称呼？
+      - 你有名字吗？
+  - intent: chitchat/ask_weather
+    examples: |
+      - 今天天气怎么样？
+      - 今天是晴天吗？
+      - 你可以帮我产看几天的天气吗？
+      - 查看天气预报
+  - intent: chitchat/ask_age
+    examples: |
+      - 你多大年纪了？
+      - 你几岁啊？
+  #memo
+  - intent: request_memo
+    examples: |
+      - 我想创建[任务](memo_name)备忘录
+      - 创建[三省吾身]备忘录
+  - intent: inform
+    examples: |
+      - [任务](memo_name)备忘录
+      - 创建事件[学习数学](event_name)
+      - 事件[运动](event)
+
+responses:
+  #chitchat
+  utter_chitchat/ask_name:
+    - text: 你好，我是Juice Bot
+    - text: 你好，可以叫我Juice Bot
+  utter_chitchat/ask_weather:
+    - text: 今天是个好天气
+    - text: 我不是很确定，但现在天气不错
